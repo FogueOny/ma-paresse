@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Formateur de texte</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    input, button {
+      padding: 10px;
+      margin: 8px;
+      font-size: 16px;
+    }
+    #resultat {
+      margin-top: 15px;
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <h2>Convertir texte en minuscule et sans espace</h2>
+  
+  <input type="text" id="texte" placeholder="Entre ton texte ici">
+  <button onclick="formaterTexte()">Convertir</button>
+
+  <div id="resultat"></div>
+
+  <script>
+    function formaterTexte() {
+      const texte = document.getElementById("texte").value;
+      const resultat = texte.replace(/\s+/g, "").toLowerCase();
+      document.getElementById("resultat").textContent = "Résultat : " + resultat;
+    }
+  </script>
+</body>
+</html>
